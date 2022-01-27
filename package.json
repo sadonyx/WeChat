@@ -1,6 +1,6 @@
 {
   "name": "wechat",
-  "homepage": "https://sadonyx.github.io/WeChat---Chat-App-Demo/",
+  "homepage": "https://vision-board.vercel.app/",
   "private": true,
   "scripts": {
     "dev": "next dev",
