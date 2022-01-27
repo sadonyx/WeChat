@@ -14,7 +14,6 @@
     "better-react-spinkit": "^2.0.4",
     "email-validator": "^2.0.4",
     "firebase": "^9.6.1",
-    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "next": "12.0.7",
     "react": "17.0.2",
