@@ -16,8 +16,12 @@ import {
 //Styling
 import styled from "styled-components";
 import { Avatar, IconButton } from "@mui/material";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { AttachFile, InsertEmoticon, Mic } from "@material-ui/icons";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AttachFileIcon from "@mui/icons-material/AttachFile";
+import MicIcon from "@mui/icons-material/Mic";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import SendIcon from "@mui/icons-material/Send";
+
 //Next
 import { useRouter } from "next/router";
 //Components
@@ -136,7 +140,7 @@ function ChatScreen({ chat, messages }) {
         </HeaderInformation>
         <HeaderIcons>
           <IconButton>
-            <AttachFile />
+            <AttachFileIcon />
           </IconButton>
           <IconButton>
             <MoreVertIcon />
@@ -149,17 +153,18 @@ function ChatScreen({ chat, messages }) {
         <EndOfMessage ref={endOfMessagesRef} />
       </MessageContainer>
       <InputContainer>
-        <InsertEmoticon />
+        <IconButton>
+          <InsertEmoticonIcon />
+        </IconButton>
         <Input value={input} onChange={(e) => setInput(e.target.value)} />
-        <button
-          hidden
-          disabled={!input}
-          type="submit"
-          onClick={(e) => sendMessage(e)}
-        >
-          Send Message
-        </button>
-        <Mic />
+        {input.length > 0 ? (
+          <IconButton type="submit" onClick={(e) => sendMessage(e)}>
+            <SendIcon />
+          </IconButton>
+        ) : null}
+        <IconButton>
+          <MicIcon />
+        </IconButton>
       </InputContainer>
     </Container>
   );

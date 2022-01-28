@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import * as EmailValidator from "email-validator";
 
@@ -13,11 +14,12 @@ import { useCollection } from "react-firebase-hooks/firestore";
 
 //Icons
 import { Avatar, IconButton, Button } from "@mui/material";
-import ChatIcon from "@material-ui/icons/chat";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
-import SearchIcon from "@material-ui/icons/search";
+import ChatIcon from "@mui/icons-material/chat";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import SearchIcon from "@mui/icons-material/Search";
 
 function Sidebar() {
+  const [search, setSearch] = useState("");
   const [user] = useAuthState(auth);
   const userChatRef = query(
     collection(db, "chats"),
@@ -59,7 +61,11 @@ function Sidebar() {
   return (
     <Container>
       <Header>
-        <UserAvatar src={user.photoURL} onClick={() => signOut(auth)} />
+        <UserAvatar
+          title="Sign Out"
+          src={user.photoURL}
+          onClick={() => signOut(auth)}
+        />
         <IconsContainer>
           <IconButton>
             <ChatIcon />
@@ -71,14 +77,29 @@ function Sidebar() {
       </Header>
       <Search>
         <SearchIcon />
-        <SearchInput placeholder="Search in chats" />
+        <SearchInput
+          placeholder="Search in chats"
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+        />
       </Search>
       <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
 
       {/* list of chats */}
-      {chatsSnapshot?.docs.map((chat) => (
+      {search.length > 0
+        ? chatsSnapshot?.docs
+            .filter((li) =>
+              li.data().users[1].toLowerCase().includes(search.toLowerCase())
+            )
+            .map((chat) => (
+              <Chat key={chat.id} id={chat.id} users={chat.data().users} />
+            ))
+        : chatsSnapshot?.docs.map((chat) => (
+            <Chat key={chat.id} id={chat.id} users={chat.data().users} />
+          ))}
+      {/* {chatsSnapshot?.docs.map((chat) => (
         <Chat key={chat.id} id={chat.id} users={chat.data().users} />
-      ))}
+      ))} */}
     </Container>
   );
 }
