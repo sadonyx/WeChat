@@ -14,7 +14,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 
 //Icons
 import { Avatar, IconButton, Button } from "@mui/material";
-import ChatIcon from "@mui/icons-material/chat";
+import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 
