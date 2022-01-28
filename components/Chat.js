@@ -4,7 +4,7 @@ import getRecipientEmail from "../utils/getRecipientEmail";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase";
 //Style
-import { Avatar } from "@material-ui/core";
+import { Avatar } from "@mui/material";
 import styled from "styled-components";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { collection, where, query } from "firebase/firestore";

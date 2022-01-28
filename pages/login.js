@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components/";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 
@@ -16,7 +16,8 @@ function Login() {
       </Head>
 
       <LoginContainer>
-        <Logo src="https://w7.pngwing.com/pngs/607/1001/png-transparent-white-arrow-illustration-telegram-logo-computer-icons-social-miscellaneous-blue-angle-thumbnail.png" />
+        <Logo src="https://www.iconpacks.net/icons/2/free-paper-plane-icon-2563-thumb.png" />
+        <WeChatHead>WeChat</WeChatHead>
         <Button variant="outlined" onClick={signIn}>
           Sign in with Google
         </Button>
@@ -32,6 +33,13 @@ const Container = styled.div`
   place-items: center;
   height: 100vh;
   background-color: whitesmoke;
+`;
+
+const WeChatHead = styled.h1`
+  font-size: 35px;
+  font-weight: bolder;
+  margin: auto;
+  padding-bottom: 20px;
 `;
 
 const LoginContainer = styled.div`

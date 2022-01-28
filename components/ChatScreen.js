@@ -15,7 +15,7 @@ import {
 } from "firebase/firestore";
 //Styling
 import styled from "styled-components";
-import { Avatar, IconButton } from "@material-ui/core";
+import { Avatar, IconButton } from "@mui/material";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { AttachFile, InsertEmoticon, Mic } from "@material-ui/icons";
 //Next

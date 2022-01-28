@@ -12,7 +12,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 //Icons
-import { Avatar, IconButton, Button } from "@material-ui/core";
+import { Avatar, IconButton, Button } from "@mui/material";
 import ChatIcon from "@material-ui/icons/chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchIcon from "@material-ui/icons/search";
