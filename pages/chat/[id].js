@@ -47,8 +47,8 @@ export async function getServerSideProps(context) {
     }))
     .sort((a, b) => a.timestamp - b.timestamp);
 
-  console.log("messages");
-  console.log(messages);
+  // console.log("messages");
+  // console.log(messages);
 
   //PREP the chats
   const chatRes = await getDoc(docRef);
