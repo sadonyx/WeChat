@@ -1,6 +1,6 @@
 {
   "name": "wechat",
-  "homepage": "https://wechat-enmtlgb6f-sadonyx.vercel.app/",
+  "homepage": "https://wechat-sooty.vercel.app/",
   "private": true,
   "scripts": {
     "dev": "next dev",
